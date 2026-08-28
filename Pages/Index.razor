@@ -1,0 +1,126 @@
+﻿@page "/"
+
+
+<div class="Order-Pizza">
+    
+<div class="Slice">
+    <img src="/pizaaimg.png" />
+</div>
+
+<hr />
+<div class="headr">
+<h2>MAKE YOUR PIZZA</h2>
+</div>
+
+<hr />
+
+<div class="Size-Section" >
+<h2 >Size</h2>
+<label class="radio-option" >
+<input type="radio" name="PizzaSize"  value="Small" checked ="@(selectedSize == "Small")" @onchange='() => SelectedSize("Small")' /> <span>Small</span>
+</label>
+<label radio-option>
+<input type="radio" name="PizzaSize"  value="Meduim" checked ="@(selectedSize == "Meduim")" @onchange='() => SelectedSize("Meduim")' /> <span>Meduim</span>
+</label>
+<label radio-option>
+<input type="radio" name="PizzaSize" value="Larg" checked ="@(selectedSize == "Larg")" @onchange='() => SelectedSize("Larg")' /> <span>Larg</span>
+</label>
+</div>
+<hr />
+
+
+
+<div class="Crust-Section" >
+<h2 >Crust Type</h2>
+<label class="radio-option" >
+<input type="radio" name="Thin"  value="Thin" checked="@(selectedCrust == "Thin")" @onchange='() =>SelectedCrust("Thin")'/> <span>Thin Crust</span>
+</label>
+<label radio-option >
+<input type="radio" name="Think"  value="Think" checked="@(selectedCrust == "Think")" @onchange='() =>SelectedCrust("Think")'/> <span>Think Crust </span>
+</label>
+</div>
+<hr />
+
+
+<div class="Toppings-Section" >
+<h2 >Toppings</h2>
+<label class="checkbox-option" >
+<input type="checkbox" name="ExtraChees"  value="ExtraChees" @bind="ExtraChees" @bind:after="CheakToppingsTypes" /> <span>Extra Chees</span>
+</label>
+<label class="checkbox-option" >
+<input type="checkbox" name="Mushrooms"  value="Mushrooms" @bind="Mushrooms" @bind:after="CheakToppingsTypes"/> <span>Mushrooms</span>
+</label>
+<label class="checkbox-option" >
+<input type="checkbox" name="Tomatoes"  value="Tomatoes" @bind="Tomatoes" @bind:after="CheakToppingsTypes" /> <span>Tomatoes</span>
+</label>
+<label class="checkbox-option" >
+<input type="checkbox" name="Onion"  value="Onion"  @bind="Onion" @bind:after="CheakToppingsTypes"/> <span>Onion</span>
+</label>
+<label class="checkbox-option" >
+<input type="checkbox" name="Olives"  value="Olives" @bind="Olives" @bind:after="CheakToppingsTypes"/> <span>Olives</span>
+</label>
+<label class="checkbox-option" >
+<input type="checkbox" name="GreenPeppers"  value="GreenPeppers"  @bind="GreenPeppers" @bind:after="CheakToppingsTypes"/> <span>Green Peppers</span>
+</label>
+</div>
+<hr />
+
+
+
+
+<div class="WhereToEat-Section" >
+<h2 >Where Do You Want To Eat ?</h2>
+<label class="radio-option" >
+<input type="radio" name="EatIn"  value="EatIn" /> <span>Eat In</span>
+</label>
+<label radio-option >
+<input type="radio" name="TakeOut"  value="TakeOut" /> <span>Take Out </span>
+</label>
+</div>
+<hr />
+<div class="Summary">
+    <h3>Order Summary</h3>
+    <hr class="summary-divider" />
+    <p>Selected Size: <span>@selectedSize</span></p>
+    <p class="total-price">Total Price: <span>$@Totalprice</span></p>
+</div>
+
+<div class="Button-Section">
+        <button type="button" >Order Now</button>
+        <button type="reset" >Reset Order</button>
+</div>
+
+
+</div>
+@code{
+    string selectedSize = "Small";
+    string selectedCrust = "Thin";
+    bool ExtraChees = false;
+    bool Mushrooms = false;
+    bool Tomatoes = false;
+    bool Onion = false;
+    bool Olives = false;
+    bool GreenPeppers = false;
+    float Totalprice = 11.5f;
+    void  SelectedSize(string Size){
+        selectedSize = Size;
+        if(selectedSize == "Small"){  Totalprice = 11.5f;}
+        if(selectedSize == "Meduim") {  Totalprice = 16.8f;}
+        if(selectedSize == "Larg") {  Totalprice = 25.99f;}
+    }
+    void SelectedCrust(string CrustType){
+        selectedCrust = CrustType;
+        if(selectedCrust == "Thin"){Totalprice +=0.0f;}
+        if(selectedCrust == "Think"){Totalprice +=1.5f;}
+    }
+    void CheakToppingsTypes(){
+        if(ExtraChees ){Totalprice +=1.5f;}
+        if(Mushrooms ){Totalprice +=1.5f;}
+        if(Tomatoes ){Totalprice +=1.5f;}
+        if(Onion ){Totalprice +=1.5f;}
+        if(Olives ){Totalprice +=1.5f;}
+        if(GreenPeppers){Totalprice +=1.5f;}
+    }
+
+    
+}

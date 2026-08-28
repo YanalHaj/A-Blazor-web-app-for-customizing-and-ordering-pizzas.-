@@ -1,0 +1,135 @@
+@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+html, body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-image: url('/pizaaimg.png');
+    background-size: 900px;
+    color: #522e28;
+    margin: 0;
+    min-height: 100vh;
+    padding: 16px;
+}
+hr{
+    border: none;
+    height: 2px;
+    background-color: #cccccc;
+    margin: 20px 0;
+    width: 100%;
+    opacity: 1;
+
+}
+
+.Order-Pizza{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    max-width: 90vw; 
+    max-height: 90vh; 
+    overflow-y: auto; 
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 2);
+    text-align: center;
+    z-index: 100;
+    box-sizing: border-box;
+   
+
+
+}
+img{
+    width: 130px;
+    position: absolute;
+    right: 30px;
+
+}
+.headr{
+   background-color: rgb(0, 0, 0);
+   color: #cccccc;
+   text-align: center;
+   font-size: small;
+   width:100%;
+   height: 45px;
+   border-radius: 14px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 2);
+   z-index: 100;
+}
+.Size-Section{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    font-family: sans-serif;
+}
+.Size-Section.h2{
+    position: absolute;
+    left: 50%;
+}
+.radio-option{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+}
+.Crust-Section{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    font-family: sans-serif;
+}
+.Crust-Section.h2{
+    position: absolute;
+    left: 50%;
+    font-style: italic;
+   
+}
+.Toppings-Section{
+      display: flex;
+      max-width: 400px;
+      margin: 15px 0;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    font-family: sans-serif;
+}
+
+.checkbox-option{
+     display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    justify-content: center;
+}
+.WhereToEat-Section{
+
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+   
+
+}
+.Button-Section{
+    
+    display: flex;
+   color: #b9bfcd;
+    align-items: flex-end;
+    gap: 15px;
+    justify-content: center;
+}
+.Button-Section button {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+Summary p span {
+    font-weight: 600;
+    color: #0f172a;
+}
